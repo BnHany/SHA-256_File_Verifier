@@ -95,6 +95,16 @@ After build, run one of:
 
 ---
 
+## Learn More / Documentation
+
+If you want to understand the internal implementation, security considerations, and design decisions behind the SHA-256 File Verifier (both Python and C++ versions), refer to the detailed documentation below:
+
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/BnHany/SHA-256_File_Verifier)
+
+This documentation is helpful for learners, security students, and developers who want to explore how SHA-256 verification is implemented across different stacks.
+
+---
+
 ## Author
 
 **BnHany**

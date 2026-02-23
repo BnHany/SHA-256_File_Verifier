@@ -93,9 +93,18 @@ After build, run one of:
 - SHA-256 hashes are displayed in lowercase hex.
 - The C++ app performs extra path and file-type validation before hashing.
 
-## Author
-BnHany
+---
 
-## License
-No license file is currently included in this repository.
-If you want, add a `LICENSE` file (for example MIT) and update this section.
+## Author
+
+**BnHany**
+
+Built with ❤️ to simplify file integrity verification for everyday users.
+Contributions, issues, and feature requests are welcome.
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**.  
+Feel free to use, modify, and distribute. Please give proper credit and use responsibly.

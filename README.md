@@ -1,0 +1,101 @@
+﻿# SHA-256 File Verifier
+A desktop SHA-256 verification toolkit with two implementations:
+- Python + Tkinter version
+- C++ Win32 + Windows CNG (BCrypt) version
+
+Verify file integrity by comparing a calculated SHA-256 hash with a trusted hash.
+
+## Features
+- Browse and select a local file
+- Calculate SHA-256 for the selected file
+- Compare calculated hash against an expected hash
+- Show clear match or mismatch result
+- Dedicated `Read Hash` flow in the C++ app
+- Input normalization and basic path hardening in the C++ app
+
+## Tech Stack
+| Variant | UI | Hashing | Build/Runtime |
+|---|---|---|---|
+| Python version | Tkinter | `hashlib.sha256` | Python 3 |
+| C version | Win32 API | Windows CNG (`bcrypt`) | CMake + C++17 |
+
+## Project Structure
+```text
+SHA-256_File_Verifier/
+|-- python version/
+|   `-- main.py               # Python Tkinter verifier
+|-- C version/
+|   |-- main.cpp              # C++ Win32 verifier
+|   |-- CMakeLists.txt        # CMake build config
+|   `-- build.ps1             # PowerShell build helper
+`-- README.md                 # Project documentation
+```
+
+## GitHub Shortcuts
+- Python folder: [`python version`](./python%20version/)
+- C++ folder: [`C version`](./C%20version/)
+- Python app file: [`python version/main.py`](./python%20version/main.py)
+- C++ app file: [`C version/main.cpp`](./C%20version/main.cpp)
+- Build script: [`C version/build.ps1`](./C%20version/build.ps1)
+- CMake config: [`C version/CMakeLists.txt`](./C%20version/CMakeLists.txt)
+
+## Clone and Open
+```bash
+git clone https://github.com/BnHany/SHA-256_File_Verifier
+cd SHA-256_File_Verifier
+```
+
+## Getting Started
+
+### Python Version
+#### Prerequisites
+- Python 3.10 or newer
+
+#### Run
+```powershell
+cd "python version"
+python main.py
+```
+
+### C Version
+#### Prerequisites
+- CMake 3.16+
+- A C++17-compatible Windows compiler (MSVC or MinGW)
+- PowerShell
+
+#### Build
+```powershell
+cd "C version"
+.\build.ps1 -Config Release
+```
+
+Optional clean rebuild:
+```powershell
+.\build.ps1 -Config Release -Clean
+```
+
+#### Run
+After build, run one of:
+```powershell
+.\build\hash_verifier_gui.exe
+.\build\Release\hash_verifier_gui.exe
+```
+
+## How to Use
+1. Select a file.
+2. Enter the trusted SHA-256 hash (64 hex characters).
+3. Click verify:
+- Python app: `Verify`
+- C++ app: `Verify Hash Match`
+4. Read the result dialog for match/mismatch.
+
+## Notes
+- SHA-256 hashes are displayed in lowercase hex.
+- The C++ app performs extra path and file-type validation before hashing.
+
+## Author
+BnHany
+
+## License
+No license file is currently included in this repository.
+If you want, add a `LICENSE` file (for example MIT) and update this section.
